@@ -1,0 +1,23 @@
+
+#profileImage1 {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: #12e3f1 !important;
+  font-size: 15px;
+  color: #512DA8;
+  text-align: center;
+  line-height: 38px;
+  margin: 5px 0;
+}
+#profileImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #512DA8;
+  font-size: 25px;
+  color: #12e3f1 !important;
+  text-align: center;
+  line-height: 60px;
+  margin: 20px 0;
+}

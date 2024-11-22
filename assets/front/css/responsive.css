@@ -1,0 +1,181 @@
+/* ************* Media Queries Small Devices ****************** */
+@media only screen and (min-width:1800px) {
+	.container { max-width: 1600px; }
+}
+@media only screen and (min-width:1600px) {
+	.logoSliderNav .logoNavPrev { left: -80px; }
+	.logoSliderNav .logoNavNext { right: -80px; }
+	.logoSlider .swiper.logoSliderInner { padding: 0 }
+	.tabInnerContent { padding: 0 100px; }
+}
+@media only screen and (max-width:1366px) {
+	.bannerCaption h2 { font-size: 60px; line-height: 70px }
+	.bannerCaption h3 {
+    font-size: 38px;}
+	#nav li, .rightMenu ul li { padding-right: 15px; }
+	.logo .mainLogo { width: 130px; }
+	.logo .amritLogo { width: 90px }
+	.bannerSlider .swiper-container { position: relative; height: 728px; }
+}
+@media only screen and (max-width:1299px) {
+	.bannerCaption h2 { font-size: 40px; line-height: 50px }
+	.bannerCaption h3 { font-size: 28px; }
+	.bannerCaption p {margin: 0;}
+	.bannerCaption h2 br { display: none; }
+	.tabInnerContent { padding: 0 30px; }
+	.bannerBtn { height: auto; line-height: initial; padding: 13px 15px; min-width: 162px; }
+	.tabBtn a {font-size: 30px;line-height: 38px;padding: 20px 0;}
+}
+@media only screen and (max-width:1199px) {
+
+	/*Navigation*/
+	.menuPart { display: none }
+	ul#navMob li.parent ul { display: none; }
+	section.headerSideBar.active span.menuClose { background: #fff; border-radius: 100%; width: 25px; height: 25px; display: block; text-align: center; margin: -10px 0 10px auto; position: relative; right: 10px; }
+	#navMob { display: block; list-style-type: none; padding: 0; }
+	#navMob li.parent a, #navMob li a, section.headerSideBar.active ul li a { border-top: 1px solid #d1db6c; border-bottom: 0 }
+	/* .stickyHeader .rightMenu { visibility: hidden ;margin-top: -23%;} */
+	nav { padding-top: 0 }
+	/* .mainNavigation { flex-wrap: wrap; } */
+	/* .rightMenu { order: 1; width: 100%; margin: 0 auto; text-align: center; background: #000; padding:0; margin-bottom: 15px; } */
+	.mainNavigation .logo { order: 2; }
+	.mainNavigation .sideBarBtn { order: 3; padding-right: 27px; }
+	/* .searchBar { margin-top: 0; top: auto; bottom: 11px; transform: none; } */
+	header.stickyHeader nav .searchBar { margin-top: 0 }
+	header.stickyHeader nav { padding-top: 5px; }
+	.toggleMenu { display: none !important; }
+	section.clusterDev .SIDBIVersionInner { padding-left: 30px; }
+	.tabInnerContent { padding: 0 10px;height: auto; }
+
+	header nav .container .logo {padding: 0 0 0 15px;}
+	/* header nav .container .searchBar {padding: 0 15px 0 0;} */
+
+	section.clusterDev .SIDBIVersionInner {padding: 0 25px;}
+	/* header.stickyHeader nav .main-nav-container .mainNavigation .logo {
+		margin-left: -60%;
+	} */
+}
+@media only screen and (max-width:991px) {
+	.container { max-width: 100% !important }
+	.bannerCaption .col-lg-5 { order: 2 }
+	.bannerCaption { text-align: center; }
+	.bannerCaption img { width: 50% }
+	.bannerCaption h2 br { display: none; }
+	.bannerCaption h2 { font-size: 38px; line-height: 48px; margin-top: 20px; }
+	.bannerCaption h3 { font-size: 24px; margin-top: 20px; }
+	.bannerCaption p { margin-top: 0; max-width: 540px; margin: 0 auto; }
+	.SIDBIVersion .half-fluid .image { width: 100%; margin-top: 50px; height: auto; }
+	.image.mgData p { width: 50%; }
+	.clusterDevHeading { padding: 30px 15px; }
+	section.clusterDev .SIDBIVersionInner h2 { font-size: 28px }
+	.clusterDev .half-fluid .image { width: 100%; margin: 30px 0; height: auto; }
+	.tabBtn a { font-size: 28px; padding: 20px 0; }
+	.clusterDevHeading h2 { font-size: 32px }
+	.footerInner h2 { font-size: 22px }
+	.mainNavigation .logo a.navbar-brand + a.navbar-brand { display: none; }
+	.banner { padding: 60px 20px 20px 20px }
+	.video-wrap video { max-width: 490px; margin: 0 auto 0 auto; }
+	/* .searchBar {bottom: 9px;} */
+	.clusterDev .half-fluid .image, .clusterDev .half-fluid .image img {min-height: auto;}
+}
+@media only screen and (max-width:768px) {
+	/* .mainNavigation { flex-wrap: wrap; text-align: center; } */
+
+	/*	.mainNavigation .logo { width: 100%; }*/
+	/* .mainNavigation .MainMenu { width: 100%; } */
+
+	/*	nav { padding: 20px 0; }*/
+
+	/*	.searchBar { top: unset; bottom: 0; transform: unset; }*/
+	.banner { padding: 100px 20px 0 20px; }
+	.bannerCaption p {margin: 0 auto 20px auto;text-align: center;}
+	.toll-free-social .col-md-5.text-end .d-flex.align-items-center.justify-content-end {justify-content: left!important;margin: 0 0 30px 0;}
+	.bannerCaption { top: 55% }
+	.bannerCaption h2 { font-size: 26px; line-height: 34px; }
+	.bannerCaption h3 { font-size: 20px; }
+	.bannerBtn {padding: 8px 15px;}
+	.bannerCaption img { width: 70%; }
+	.bannerSliderNav { left: 50%; bottom: 30px; transform: translateX(-50%); z-index: 2; }
+	.bannerSliderNavNext.swiper-button-next, .bannerSliderNavPrev.swiper-button-prev, .logoNavPrev, .logoNavNext { bottom: 0; }
+	.image.mgData { padding: 45px 45px 0px; }
+	.image.mgData p { width: 60%; }
+	.bannerCaption p { margin-top: 0; font-size: 16px; line-height: 25px; }
+	.SIDBIVersionInner { padding-top: 30px; padding-right: 0;  }
+	.clusterDevHeading h2 { font-size: 26px; text-align: left; }
+	.clusterDevHeading p {text-align: left;}
+	.clusterDevHeading h2:before { left: 0; transform: none; }
+	section.clusterDev .col-lg-6 {padding: 0;}
+	section.clusterDev .SIDBIVersionInner h2 { font-size: 22px; line-height: 31px; margin: 0 0 10px 0; }
+	section.copyRight ul li { padding: 0 12px 10px 12px; }
+	.bannerNavLink ul.list-unstyled li { height: auto; line-height: initial; font-size: 14px; }
+	.bannerSocial ul li { width: 35px; height: 35px; line-height: 35px; }
+	.bannerSocial ul li a i { line-height: 35px; font-size: 16px; }
+	.bannerBtn { margin: 0 0 30px 0 }
+
+	section.ecoSystem {padding: 40px 0;border-width: 14px;}
+		.rightMenu {padding: 0;}
+	.rightMenu ul li.language .form-select {padding: 15px 17px 15px 0;}
+}
+
+/* ************* Mobiles Media Queries ****************** */
+@media only screen and (max-width:767px) {
+	footer .footerInner .ImgWrap {margin: 0 0 25px 0;}
+	.footerInner ul.list-unstyled.contactDetails li a {font-size: 14px;}
+	.footerInner h5 {margin: 0 0 20px 52px;}
+	footer .footerInner .col-lg-2.col-md-2.col-5.col-sm-6 ul.list-unstyled.footerNav {margin: 0 0 0 52px;}
+	.topStrip { display: none }
+	.footerInner ul.list-unstyled.contactDetails { margin-left: 0;padding: 0 }
+	section.about-us-banner h1 { font-size: 40px; }
+	.banner { position: relative; }
+	section.copyRight ul li a, section.copyRight p.text-white {font-size: 14px;}
+	section.copyRight ul li:before {display: none;}
+	.download-our-app {margin: 15px 0 0 0;}
+	.download-our-app img {max-width: 150px;}
+	section.tabSection { text-align: center; }
+	section.press-coverage .press-coverage-listing .press-coverage-list .press-coverage-list-inner .content {width: 100%;padding: 20px 0 0 0;}
+	section.press-coverage .press-coverage-listing .press-coverage-list .press-coverage-list-inner .image {width: 100%;}
+	section.financials-shareholding {padding: 40px 0 0 0;}
+	.cms.PSIGProgramme section.SIDBIWrap, .cms.PSIGProgramme {padding: 0;}
+	.key-ul ul li {font-size: 14px;line-height: 22px;}
+	.joinusInner p {line-height: 22px;}
+	section.social-media {padding: 35px 0 75px 0;}
+	.socialSliderNav { bottom: -20px; margin: 0 auto; top: auto; transform: none; }
+	.socialSliderNav .socialNavNext { right: 0; margin: 0; top: 0; }
+	.socialSliderNav .socialNavPrev { left: 20px; top: 0; margin: 0; }
+	header nav .container {padding: 0;}
+	.rightMenu {padding: 0;}
+	.rightMenu ul li.language .form-select {padding: 15px 17px 15px 0;}
+	/* header.stickyHeader nav .main-nav-container .mainNavigation .logo {
+	    margin-left: 0 !important;
+	} */
+}
+@media only screen and (max-width:680px) {
+	.bannerCaption { top: 50% }
+	.bannerNavLink ul { display: block; }
+	footer .footerInner .col-lg-2.col-md-2.col-5.col-sm-6 ul.list-unstyled.footerNav {margin: 0}
+	.footerInner ul.list-unstyled.contactDetails {padding: 0;}
+	footer .footerInner .ImgWrap {margin: 0 0 25px 0;}
+	.footerInner h5 {margin: 0 0 20px 0;}
+	.bannerNavLink ul li a { padding: 10px 10px; }
+}
+@media only screen and (max-width:575px) {
+	.bannerBtn { margin: 0 }
+	.bannerSocial { display: none }
+	.image.mgData { min-height: auto; }
+	.image.mgData p { width: 100%; }
+	section.tabSection .container-fluid { padding: 20px 0; }
+	.tabInnerContent { height: auto; }
+	.tabBtn a { font-size: 22px; padding: 0px 0 10px 0; line-height: 30px; }
+	/* .footerInner ul.list-unstyled.contactDetails { margin: 0 0 30px 0px; } */
+	.SIDBIVersion .half-fluid .image { background-size: 100%; background-position: 100% 100%; min-height: auto; background-repeat: no-repeat; padding: 20px 20px 55px 20px; background-color: #eaeaea; }
+	.SIDBIVersionInner a { margin-top: 0 !important }
+	section.about-us-banner h1 {font-size: 30px;line-height: 40px;}
+	.joinusInner a.cccsBTN:After {top: 8px;}
+	section.mission-vision .image.mission-vision-image {padding: 30px 15px 30px 15px;}
+	ul.list-unstyled.footerNav li:before {top: -2px;}
+	
+}
+@media only screen and (max-width:459px) {
+	.bannerCaption img { width: 100%; }
+	section.banner .container {padding: 0;}
+}

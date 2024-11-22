@@ -1,0 +1,31 @@
+
+#profileImage1 {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: #fff !important;
+  font-weight: 600;
+  /* background: #12e3f1 !important; */
+  font-size: 15px;
+  color: #512DA8;
+  text-align: center;
+  line-height: 38px;
+  margin: 5px 0;
+}
+#profileImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-weight: 600;
+  /* background: #512DA8; */
+  font-size: 25px;
+  /* background: #512DA8 !important; */
+  color: #fff !important;
+  text-align: center;
+  line-height: 60px;
+  margin: 20px 0;
+  border-bottom-color: transparent;
+    background-color: transparent;
+    background-image: linear-gradient(to right, #015de1 0, #560bdf 75%);
+    background-repeat: repeat-x;
+}
