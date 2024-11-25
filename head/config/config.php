@@ -12,14 +12,14 @@
 //header('Content-type: text/html; charset=utf-8');
 
 /// API PATH URL ///
-define('SEOURL', 'http://localhost/sidbi_website/');
-define('SITEHOME', 'http://localhost/sidbi_website/');
-define('BASEPATH', 'http://localhost/sidbi_website/head/');
+define('SEOURL', 'http://localhost/sidbi_final_22_11_24/');
+define('SITEHOME', 'http://localhost/sidbi_final_22_11_24/');
+define('BASEPATH', 'http://localhost/sidbi_final_22_11_24/head/');
 define('PUBLIC', BASEPATH . '/public');
 define('VIEW', BASEPATH . '/view');
 define('LICENSE_ACCESS', '0');
-define('APIACCESSPATH', 'http://localhost/sidbi_website/head/controller/core/');  //External API Path
-define('APIPATH', 'http://localhost/sidbi_website/head/controller/api/');  //External API Path
+define('APIACCESSPATH', 'http://localhost/sidbi_final_22_11_24/head/controller/core/');  //External API Path
+define('APIPATH', 'http://localhost/sidbi_final_22_11_24/head/controller/api/');  //External API Path
 /* define('IMAGEPATH', 'https://radprix.com/uploads/productmediagallery/');  */ //External API Path
 define('TIMEZONE', 'Asia/Kolkata');
 define('LANG', 'EN');

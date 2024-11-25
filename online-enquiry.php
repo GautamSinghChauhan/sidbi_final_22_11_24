@@ -371,7 +371,10 @@ require_once('head/jackus.php');
                                 showAlert('Error', response.errors.description_required);
                             } else if (response.errors.emailid_required) {
                                 showAlert('Error', response.errors.emailid_required);
+                            }else if(response.errors.zipcode_required){
+                                showAlert('Error', response.errors.zipcode_required);
                             }
+                            
                         } else {
                             $('.sent_otp_btn').attr('disabled', true);
                             $("#endtime_div").show();
