@@ -479,63 +479,136 @@ require_once('head/jackus.php');
                         $("#user_captcha").val("");
                     },
                     error: function(error) {
-                        console.log(error);
+                        showAlert('Error', error);
+                        // console.log(error);
                     }
                 });
-            } // JavaScript/jQuery code for inserting the data
+            } 
+// by gautam capta
+//             function refreshCaptcha() {
+//     $.ajax({
+//         type: "GET",
+//         url: "head/engine/ajax/ajax_generateCaptchaImageForEnquiry.php?refresh=true",
+//         dataType: "json",
+//         success: function(response) {
+//             // Assuming 'response' is already in JSON format
+//             if (response.success === false) {
+//                 // Check for captcha error and show an alert
+//                 if (response.errors && response.errors.captcha_verification_failed) {
+//                     showAlert('Error', 'Captcha verification failed. Please try again.');
+//                 } else {
+//                     // Handle other errors (if any)
+//                     showAlert('Error', 'An error occurred. Please try again.');
+//                 }
+//             } else {
+//                 // Success case (if no CAPTCHA error and the process is successful)
+//                 showAlert('Success', 'Captcha refreshed successfully!');
+//                 // You can also reload the page if needed, or perform any other action.
+//                 // location.reload();
+//             }
+//         },
+//         error: function(xhr, status, error) {
+//             // Handle AJAX error
+//             alert('Error occurred: ' + error);
+//         }
+//     });
+// }
+
+// by end gautam capta
 
             // JavaScript/jQuery code for inserting the data
+
+            // JavaScript/jQuery code for inserting the data
+            // function submitForm() {
+            //     // Validate the form using Bootstrap Validator
+            //     var bootstrapValidator = $('#enquiry_form_submit').data('bootstrapValidator');
+            //     if (!bootstrapValidator.isValid()) {
+            //         // Form validation failed
+            //         return false;
+            //     }
+            //     var form = $('#enquiry_form_submit')[0];
+            //     var data = new FormData(form);
+            //     // $(this).find("button[type='submit']").prop('disabled', true);
+            //     $.ajax({
+            //         type: "post",
+            //         url: 'head/engine/ajax/ajax_manage_enquiry.php?type=add',
+            //         data: data,
+            //         processData: false,
+            //         contentType: false,
+            //         cache: false,
+            //         timeout: 80000,
+            //         dataType: 'json',
+            //         encode: true,
+            //     }).done(function(response) {
+            //         // console.log(data);
+            //         if (!response.success) {
+            //             //NOT SUCCESS RESPONSE
+            //             if (response.errors.captcha_verification_failed) {
+            //                 showAlert('error', 'Captcha Verification Failed');
+            //             }
+            //         } else {
+            //             //SUCCESS RESPOSNE
+            //             if (response.result == true) {
+            //                 //RESULT SUCCESS
+            //                 form.reset();
+            //                 showAlert('success', response.result_success);
+            //                 <?php unset($_SESSION['enquiry_captcha']); ?>
+            //                 setInterval(function() {
+            //                     location.reload();
+            //                 }, 5000);
+            //             } else if (response.result == false) {
+            //                 //RESULT FAILED
+            //                 showAlert('error', response.result_error);
+            //             }
+            //         }
+            //         if (response == "OK") {
+            //             return true;
+            //         } else {
+            //             return false;
+            //         }
+            //     });
+            //     // Prevent default form submission
+            //     return false;
+            // }
+
             function submitForm() {
-                // Validate the form using Bootstrap Validator
-                var bootstrapValidator = $('#enquiry_form_submit').data('bootstrapValidator');
-                if (!bootstrapValidator.isValid()) {
-                    // Form validation failed
-                    return false;
-                }
-                var form = $('#enquiry_form_submit')[0];
-                var data = new FormData(form);
-                // $(this).find("button[type='submit']").prop('disabled', true);
-                $.ajax({
-                    type: "post",
-                    url: 'head/engine/ajax/ajax_manage_enquiry.php?type=add',
-                    data: data,
-                    processData: false,
-                    contentType: false,
-                    cache: false,
-                    timeout: 80000,
-                    dataType: 'json',
-                    encode: true,
-                }).done(function(response) {
-                    // console.log(data);
-                    if (!response.success) {
-                        //NOT SUCCESS RESPONSE
-                        if (response.errors.captcha_verification_failed) {
-                            showAlert('error', 'Captcha Verification Failed');
-                        }
-                    } else {
-                        //SUCCESS RESPOSNE
-                        if (response.result == true) {
-                            //RESULT SUCCESS
-                            form.reset();
-                            showAlert('success', response.result_success);
-                            <?php unset($_SESSION['enquiry_captcha']); ?>
-                            setInterval(function() {
-                                location.reload();
-                            }, 5000);
-                        } else if (response.result == false) {
-                            //RESULT FAILED
-                            showAlert('error', response.result_error);
-                        }
-                    }
-                    if (response == "OK") {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                });
-                // Prevent default form submission
-                return false;
+    // Validate the form using Bootstrap Validator
+    var bootstrapValidator = $('#enquiry_form_submit').data('bootstrapValidator');
+    if (!bootstrapValidator.isValid()) {
+        // Form validation failed
+        return false;
+    }
+
+    var form = $('#enquiry_form_submit')[0];
+    var data = new FormData(form);
+
+    $.ajax({
+        type: "POST",
+        url: 'head/engine/ajax/ajax_manage_enquiry.php?type=add',
+        data: data,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            var result = JSON.parse(response);
+            if (result.status === 'success') {
+                // Show success message
+                showAlert('success', result.message);
+                // alert(result.message);
+                // Reload the page after a successful form submission
+                location.reload();  // This will reload the current page
+            } else {
+                // Show error message if there is an issue
+                showAlert('success', result.message);
+                // alert(result.message);
             }
+        },
+        error: function(xhr, status, error) {
+            // Handle error case
+            showAlert('Error occurred:', error);
+            // alert('Error occurred: ' + error);
+        }
+    });
+}
 
             // Function to show alerts dynamically
             function showAlert(type, message) {
