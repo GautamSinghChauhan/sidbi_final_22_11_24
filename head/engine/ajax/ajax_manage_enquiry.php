@@ -482,7 +482,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
 							);
 
                         // Initialize the response array
-    $response = [];
+                  $response = [];
 
 	// echo json_encode($finalApiResponse);
 

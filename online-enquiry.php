@@ -571,7 +571,70 @@ require_once('head/jackus.php');
             //     return false;
             // }
 
-            function submitForm() {
+//             function submitForm() {
+//                    // Check if OTP verification is done
+
+//                    if ($('#show_verified_otp').hasClass('d-none')) {
+//         // Email verification is not done
+//         showAlert('Error', 'Please complete the email verification process first.');
+//         return false; // Prevent form submission
+//     }
+
+   
+//     // Validate the form using Bootstrap Validator
+//     var bootstrapValidator = $('#enquiry_form_submit').data('bootstrapValidator');
+//     if (!bootstrapValidator.isValid()) {
+//         // Form validation failed
+//         return false;
+//     }
+
+//     var form = $('#enquiry_form_submit')[0];
+//     var data = new FormData(form);
+
+//     $.ajax({
+//         type: "POST",
+//         url: 'head/engine/ajax/ajax_manage_enquiry.php?type=add',
+//         data: data,
+//         processData: false,
+//         contentType: false,
+//         success: function(response) {
+//             console.log("Response from server:", response); // Log response for debugging
+//             // var result = JSON.parse(response);
+//             console.log("Response from server ANoop:", response);
+
+//             if (response.status === 'success') {
+//                  // Show the success message from backend
+//                  showAlert('Success', result.message);
+//                     form.reset(); // Reset the form
+                    
+//                     <?php unset($_SESSION['enquiry_captcha']); ?> // Unset captcha session
+                    
+//                     setTimeout(function() {
+//                         location.reload(); // Reload the page on success
+//                     }, 3000); // Delay reload to show success message
+//             } else if (response.errors && response.errors.captcha_verification_failed) {
+//                 // Show captcha error message
+//                 showAlert('Error', 'Invalid captcha. Please try again.');
+//             } else {
+//                 // Handle other possible errors
+//                 showAlert('Error', 'An unexpected error occurred. Please try again Gautam');
+//             }
+//         },
+//         error: function(xhr, status, error) {
+//             // Handle error case
+//             showAlert('Error occurred:', error);
+//             // alert('Error occurred: ' + error);
+//         }
+//     });
+// }
+
+function submitForm() {
+    // Check if OTP verification is done
+    if ($('#show_verified_otp').hasClass('d-none')) {
+        showAlert('Error', 'Please complete the email verification process first.');
+        return false; // Prevent form submission
+    }
+
     // Validate the form using Bootstrap Validator
     var bootstrapValidator = $('#enquiry_form_submit').data('bootstrapValidator');
     if (!bootstrapValidator.isValid()) {
@@ -589,23 +652,45 @@ require_once('head/jackus.php');
         processData: false,
         contentType: false,
         success: function(response) {
-            var result = JSON.parse(response);
-            if (result.status === 'success') {
-                // Show success message
-                showAlert('success', result.message);
-                // alert(result.message);
-                // Reload the page after a successful form submission
-                location.reload();  // This will reload the current page
-            } else {
-                // Show error message if there is an issue
-                showAlert('success', result.message);
-                // alert(result.message);
+            console.log("Raw response from server:", response); // Log raw response for debugging
+
+            try {
+                // Ensure response is parsed correctly
+                let result = typeof response === 'string' ? JSON.parse(response) : response;
+
+                console.log("Parsed response:", result);
+                // do break code from here
+        
+
+
+
+                if (result.status === 'success') {
+                    // Show the success message from backend
+                    showAlert('Success', result.message);
+                    form.reset(); // Reset the form
+
+                    <?php unset($_SESSION['enquiry_captcha']); ?> // Unset captcha session
+
+                    setTimeout(function () {
+                        location.reload(); // Reload the page on success
+                    }, 3000); // Delay reload to show success message
+                } else if (result.errors && result.errors.captcha_verification_failed) {
+                    // Show captcha error message
+                    showAlert('Error', 'Invalid captcha. Please try again.');
+                } else {
+                    // Handle other possible errors
+                    showAlert('Error', 'An unexpected error occurred. Please try again.');
+                }
+            } catch (e) {
+                console.error("Error parsing server response:", e);
+                console.error("Response content:", response);
+                showAlert('Error', 'An error occurred while processing the response. Please try again.');
             }
         },
         error: function(xhr, status, error) {
             // Handle error case
-            showAlert('Error occurred:', error);
-            // alert('Error occurred: ' + error);
+            console.error("AJAX error:", status, error);
+            showAlert('Error', 'An error occurred while submitting the form. Please try again.');
         }
     });
 }
